@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+  <title id="title">Hệ sinh thái tư vấn và kết nối chuyên môn y tế</title>
+  <desc id="desc">Minh họa vector gồm biểu tượng y tế, mạng lưới chuyên gia và bảng dữ liệu chiến lược.</desc>
+  <defs>
+    <linearGradient id="background" x1="48" y1="26" x2="660" y2="694" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9FCFF"/>
+      <stop offset="1" stop-color="#E8F2FF"/>
+    </linearGradient>
+    <linearGradient id="navy" x1="178" y1="205" x2="337" y2="447" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B4D94"/>
+      <stop offset="1" stop-color="#022654"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="510" y1="87" x2="596" y2="164" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF9B42"/>
+      <stop offset="1" stop-color="#FF6900"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(248 326) rotate(90) scale(166)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DDEEFF"/>
+      <stop offset="1" stop-color="#F8FBFF"/>
+    </radialGradient>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2" fill="#8DB5E2" opacity=".6"/>
+    </pattern>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#123D70" flood-opacity=".1"/>
+    </filter>
+  </defs>
+
+  <rect width="720" height="720" rx="52" fill="url(#background)"/>
+  <circle cx="690" cy="70" r="150" fill="#D9E9FB" opacity=".72"/>
+  <circle cx="24" cy="676" r="145" fill="#C9DFF8" opacity=".48"/>
+  <path d="M560 0H720V174C674 152 629 114 596 70C576 44 565 21 560 0Z" fill="#052E68" opacity=".04"/>
+  <rect x="36" y="150" width="106" height="162" fill="url(#dots)" opacity=".56"/>
+  <rect x="575" y="501" width="112" height="142" fill="url(#dots)" opacity=".6"/>
+
+  <g>
+    <rect x="63" y="65" width="594" height="590" rx="39" fill="#FFFFFF"/>
+    <rect x="63.75" y="65.75" width="592.5" height="588.5" rx="38.25" fill="none" stroke="#DCE8F5" stroke-width="1.5"/>
+  </g>
+
+  <g transform="translate(104 103)">
+    <path d="M0 20L20 0H50L30 20V50L10 70V40L0 30V20Z" fill="#052E68"/>
+    <path d="M22 0H34V18H54V30H22V0Z" fill="#FF6900"/>
+    <text x="72" y="22" fill="#052E68" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="1.7">HEALTHCARE</text>
+    <text x="72" y="43" fill="#052E68" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="1.7">ALLIANCE</text>
+  </g>
+  <rect x="510" y="102" width="104" height="34" rx="17" fill="#FFF1E7"/>
+  <circle cx="530" cy="119" r="5" fill="#FF6900"/>
+  <text x="544" y="123" fill="#C65100" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing=".7">KẾT NỐI</text>
+
+  <path d="M266 235C328 196 391 183 448 198" fill="none" stroke="#B4CDE9" stroke-width="2" stroke-dasharray="6 8"/>
+  <path d="M327 337C373 335 404 325 435 299" fill="none" stroke="#B4CDE9" stroke-width="2" stroke-dasharray="6 8"/>
+  <path d="M310 410C355 455 397 477 452 481" fill="none" stroke="#B4CDE9" stroke-width="2" stroke-dasharray="6 8"/>
+
+  <g>
+    <circle cx="245" cy="330" r="127" fill="url(#glow)" stroke="#D5E5F6" stroke-width="2"/>
+    <circle cx="245" cy="330" r="104" fill="#FFFFFF" stroke="#BCD5EF" stroke-width="2"/>
+    <circle cx="245" cy="330" r="87" fill="url(#navy)"/>
+    <path d="M245 275C269 290 291 295 291 295V329C291 364 271 385 245 398C219 385 199 364 199 329V295C199 295 221 290 245 275Z" fill="#FFFFFF" fill-opacity=".13" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="236" y="305" width="18" height="55" rx="5" fill="#FFFFFF"/>
+    <rect x="218" y="323" width="55" height="18" rx="5" fill="#FFFFFF"/>
+    <circle cx="245" cy="330" r="112" fill="none" stroke="#FF6900" stroke-width="3" stroke-dasharray="3 13"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="102" y="196" width="112" height="69" rx="16" fill="#FFFFFF"/>
+    <circle cx="129" cy="223" r="12" fill="#E7F1FC"/>
+    <path d="M123 223L127 227L135 217" fill="none" stroke="#0B4D94" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="151" y="221" fill="#052E68" font-family="Arial, sans-serif" font-size="15" font-weight="700">12+</text>
+    <text x="151" y="240" fill="#738298" font-family="Arial, sans-serif" font-size="8.5" font-weight="600">NĂM KINH NGHIỆM</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="427" y="165" width="178" height="144" rx="18" fill="#FFFFFF"/>
+    <text x="449" y="193" fill="#052E68" font-family="Arial, sans-serif" font-size="11" font-weight="700">DỮ LIỆU CHIẾN LƯỢC</text>
+    <rect x="449" y="211" width="99" height="7" rx="3.5" fill="#E7EEF7"/>
+    <rect x="449" y="211" width="71" height="7" rx="3.5" fill="#FF6900"/>
+    <rect x="449" y="233" width="18" height="49" rx="6" fill="#BCD5EF"/>
+    <rect x="476" y="247" width="18" height="35" rx="6" fill="#8BB6E3"/>
+    <rect x="503" y="224" width="18" height="58" rx="6" fill="#2E75B9"/>
+    <rect x="530" y="203" width="18" height="79" rx="6" fill="#052E68"/>
+    <path d="M451 264L485 245L513 252L540 213L573 228" fill="none" stroke="#FF6900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="573" cy="228" r="5" fill="#FF6900"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="420" y="340" width="191" height="128" rx="18" fill="#FFFFFF"/>
+    <text x="442" y="369" fill="#052E68" font-family="Arial, sans-serif" font-size="11" font-weight="700">MẠNG LƯỚI CHUYÊN GIA</text>
+    <g transform="translate(442 388)">
+      <circle cx="19" cy="19" r="19" fill="#E4F0FC"/>
+      <circle cx="19" cy="15" r="6" fill="#3979B6"/>
+      <path d="M8 32C10 23 28 23 30 32" fill="#3979B6"/>
+      <circle cx="72" cy="19" r="19" fill="#FFF0E6"/>
+      <circle cx="72" cy="15" r="6" fill="#FF6900"/>
+      <path d="M61 32C63 23 81 23 83 32" fill="#FF6900"/>
+      <circle cx="125" cy="19" r="19" fill="#E7EDFA"/>
+      <circle cx="125" cy="15" r="6" fill="#294E87"/>
+      <path d="M114 32C116 23 134 23 136 32" fill="#294E87"/>
+      <path d="M38 19H53M91 19H106" stroke="#9ABBE0" stroke-width="2" stroke-dasharray="3 4"/>
+    </g>
+    <rect x="443" y="442" width="116" height="6" rx="3" fill="#E7EEF7"/>
+    <rect x="443" y="442" width="82" height="6" rx="3" fill="#2E75B9"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="102" y="498" width="281" height="108" rx="18" fill="#FFFFFF"/>
+    <circle cx="134" cy="531" r="14" fill="#052E68"/>
+    <path d="M127 531H141M134 524V538" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+    <text x="159" y="526" fill="#052E68" font-family="Arial, sans-serif" font-size="11" font-weight="700">GIẢI PHÁP TÍCH HỢP</text>
+    <text x="159" y="546" fill="#738298" font-family="Arial, sans-serif" font-size="9">Y tế · Nhân sự · Thị trường</text>
+    <rect x="126" y="569" width="230" height="9" rx="4.5" fill="#E8EFF7"/>
+    <rect x="126" y="569" width="174" height="9" rx="4.5" fill="url(#orange)"/>
+    <circle cx="301" cy="573.5" r="8" fill="#FFFFFF" stroke="#FF6900" stroke-width="3"/>
+  </g>
+
+  <circle cx="446" cy="198" r="8" fill="#FFFFFF" stroke="#2E75B9" stroke-width="4"/>
+  <circle cx="435" cy="299" r="8" fill="#FFFFFF" stroke="#FF6900" stroke-width="4"/>
+  <circle cx="452" cy="481" r="8" fill="#FFFFFF" stroke="#052E68" stroke-width="4"/>
+</svg>
