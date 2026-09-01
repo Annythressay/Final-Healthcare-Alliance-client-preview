@@ -371,10 +371,8 @@ if (activityPage) {
 
     link.className = className;
     link.href = sourceLink.href;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
     link.append(document.createTextNode(translateInterfaceText("Xem thêm")));
-    icon.className = "fa-solid fa-arrow-up-right-from-square";
+    icon.className = "fa-solid fa-arrow-right";
     icon.setAttribute("aria-hidden", "true");
     link.append(icon);
     return link;
@@ -615,6 +613,113 @@ if (activityPage) {
 
   window.addEventListener("languagechange", updateActivityPage);
   updateActivityPage();
+}
+
+const relatedActivities = document.querySelector("[data-activity-related]");
+const activityShareLinks = document.querySelectorAll("[data-share-service]");
+
+if (activityShareLinks.length) {
+  const currentActivityUrl = window.location.href.split("#")[0];
+  const currentActivityTitle = document.querySelector(".activity-detail-header h1")
+    ?.textContent.trim() || document.title;
+  const encodedActivityUrl = encodeURIComponent(currentActivityUrl);
+  const encodedActivityTitle = encodeURIComponent(currentActivityTitle);
+
+  const updateActivityShareLinks = () => {
+    activityShareLinks.forEach((link) => {
+      const service = link.dataset.shareService;
+
+      if (service === "linkedin") {
+        link.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedActivityUrl}`;
+      } else if (service === "facebook") {
+        link.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedActivityUrl}`;
+      } else if (service === "x") {
+        link.href = `https://twitter.com/intent/tweet?url=${encodedActivityUrl}&text=${encodedActivityTitle}`;
+      } else if (service === "email") {
+        link.href = `mailto:?subject=${encodeURIComponent(`${translateInterfaceText("Hoạt động:")} ${currentActivityTitle}`)}&body=${encodeURIComponent(`${currentActivityTitle}\n\n${currentActivityUrl}`)}`;
+      }
+    });
+  };
+
+  window.addEventListener("languagechange", updateActivityShareLinks);
+  updateActivityShareLinks();
+}
+
+if (relatedActivities) {
+  const relatedCards = Array.from(
+    relatedActivities.querySelectorAll("[data-related-card]")
+  );
+  const previousRelated = relatedActivities.querySelector(
+    '[data-related-action="previous"]'
+  );
+  const nextRelated = relatedActivities.querySelector(
+    '[data-related-action="next"]'
+  );
+  const relatedStatus = relatedActivities.querySelector("[data-related-status]");
+  let relatedPage = 0;
+  let relatedItemsPerPage = 3;
+
+  const getRelatedItemsPerPage = () => {
+    if (window.innerWidth <= 575) return 1;
+    if (window.innerWidth <= 991) return 2;
+    return 3;
+  };
+
+  const getRelatedStatus = (current, total) =>
+    translateInterfaceText("Trang hoạt động liên quan {current} / {total}")
+      .replace("{current}", String(current))
+      .replace("{total}", String(total));
+
+  const updateRelatedActivities = (resetPage = false) => {
+    relatedItemsPerPage = getRelatedItemsPerPage();
+    const totalPages = Math.max(
+      1,
+      Math.ceil(relatedCards.length / relatedItemsPerPage)
+    );
+
+    if (resetPage) relatedPage = 0;
+    relatedPage = Math.min(relatedPage, totalPages - 1);
+    const start = relatedPage * relatedItemsPerPage;
+    const visibleCards = new Set(
+      relatedCards.slice(start, start + relatedItemsPerPage)
+    );
+
+    relatedCards.forEach((card) => {
+      card.hidden = !visibleCards.has(card);
+    });
+
+    if (previousRelated) {
+      previousRelated.disabled = relatedPage === 0;
+      previousRelated.setAttribute(
+        "aria-label",
+        translateInterfaceText("Hoạt động liên quan trước")
+      );
+    }
+    if (nextRelated) {
+      nextRelated.disabled = relatedPage === totalPages - 1;
+      nextRelated.setAttribute(
+        "aria-label",
+        translateInterfaceText("Hoạt động liên quan tiếp theo")
+      );
+    }
+    if (relatedStatus) {
+      relatedStatus.textContent = getRelatedStatus(relatedPage + 1, totalPages);
+    }
+  };
+
+  previousRelated?.addEventListener("click", () => {
+    relatedPage -= 1;
+    updateRelatedActivities();
+  });
+
+  nextRelated?.addEventListener("click", () => {
+    relatedPage += 1;
+    updateRelatedActivities();
+  });
+
+  window.addEventListener("resize", () => updateRelatedActivities(true));
+  window.addEventListener("languagechange", () => updateRelatedActivities());
+  updateRelatedActivities();
 }
 
 const statsSection = document.querySelector(".stats");
