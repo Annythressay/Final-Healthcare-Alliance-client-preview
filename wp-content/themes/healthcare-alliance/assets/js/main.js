@@ -812,10 +812,12 @@ partnerMarquees.forEach((marquee) => {
 
   if (!track || !group) return;
 
-  const clone = group.cloneNode(true);
-  clone.setAttribute("aria-hidden", "true");
-  clone.querySelectorAll("img").forEach((image) => image.setAttribute("alt", ""));
-  track.appendChild(clone);
+  if (!prefersReducedMotion) {
+    const clone = group.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    clone.querySelectorAll("img").forEach((image) => image.setAttribute("alt", ""));
+    track.appendChild(clone);
+  }
 
   const speed = Number(marquee.dataset.speed) || 38;
   let groupWidth = 0;
@@ -846,21 +848,12 @@ partnerMarquees.forEach((marquee) => {
     requestAnimationFrame(animate);
   };
 
-  const images = Array.from(group.querySelectorAll("img"));
-  const imagesReady = images.map((image) => {
-    if (image.complete) return Promise.resolve();
+  measure();
 
-    return new Promise((resolve) => {
-      image.addEventListener("load", resolve, { once: true });
-      image.addEventListener("error", resolve, { once: true });
-    });
-  });
-
-  Promise.all(imagesReady).then(() => {
-    measure();
+  if (!prefersReducedMotion) {
     previousTime = performance.now();
     requestAnimationFrame(animate);
-  });
+  }
 
   if ("ResizeObserver" in window) {
     const resizeObserver = new ResizeObserver(measure);

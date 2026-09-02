@@ -2610,6 +2610,17 @@ h3 {
 
 /* End Partners */
 
+@media (prefers-reduced-motion: reduce) {
+  .partner-list {
+    overflow-x: auto;
+  }
+
+  .partner-list::before,
+  .partner-list::after {
+    display: none;
+  }
+}
+
 /* About Page */
 .about-hero {
   padding: 102px 0 108px;
