@@ -429,6 +429,7 @@ h3 {
 .stat-item .inner-icon {
   width: 54px;
   height: 54px;
+  flex-shrink: 0;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -446,6 +447,7 @@ h3 {
 }
 
 .stat-item .inner-content {
+  min-width: min-content;
   display: flex;
   flex-direction: column;
 }
