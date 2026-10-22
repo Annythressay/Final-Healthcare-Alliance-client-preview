@@ -2610,6 +2610,10 @@ h3 {
   transform-origin: center;
 }
 
+.partner-logo.is-contained {
+  transform: none;
+}
+
 /* End Partners */
 
 @media (prefers-reduced-motion: reduce) {
